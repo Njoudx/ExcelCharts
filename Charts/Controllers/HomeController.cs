@@ -11,7 +11,7 @@ namespace Charts.Controllers
     {
         public ActionResult Index()
         {
-            string path = Server.MapPath("~/Content/Sheets/sandbox_test.xlsx");
+            string path = Server.MapPath("~/Content/Sheets/Book1.xlsx");
             Excel.Application xlApp = new Excel.Application();
             Excel.Workbook xlWorkbook = xlApp.Workbooks.Open(@path);
             Excel._Worksheet xlWorksheet = xlWorkbook.Sheets[1];
@@ -48,9 +48,6 @@ namespace Charts.Controllers
             ViewBag.Json = json;
             ViewBag.Labels = labels;
             ViewBag.Values = values;
-            //cleanup
-            GC.Collect();
-            GC.WaitForPendingFinalizers();
             
             //close and release
             xlWorkbook.Close();
