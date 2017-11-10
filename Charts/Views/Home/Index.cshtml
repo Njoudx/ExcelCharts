@@ -130,7 +130,6 @@
 
 
         function BindTable(jsondata, tableid) {/*Function used to convert the JSON array to Html Table*/
-            alert(JSON.stringify(jsondata));
             var columns = BindTableHeader(jsondata, tableid); /*Gets all the column headings of Excel*/
             for (var i = 0; i < jsondata.length; i++) {
                 var row$ = $('<tr/>');
@@ -189,7 +188,6 @@
                     'width': 400,
                     'height': 300
                 };
-                alert(JSON.stringify(data));
                 // Instantiate and draw our chart, passing in some options.
                 var chart = new google.visualization.PieChart(document.getElementById('chart_client'));
                 chart.draw(data, options);
